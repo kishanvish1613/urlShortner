@@ -1,14 +1,13 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import connect from './config/serverConfig.js';
+import {connect, PORT} from './config/serverConfig.js';
 import urlRoutes from './routes/index.js'
 
+
 const app = express();
-const PORT = 3001;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-
 
 app.use('/url', urlRoutes);
 
