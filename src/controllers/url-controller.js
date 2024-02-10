@@ -5,7 +5,7 @@ export async function generateShortUrl(req, res){
     try {
         const { url } = req.body; 
         if(!url) return res.status(400).json({
-            mess: 'pass the url', 
+            message: 'pass the url', 
         })
 
     const ShortId = shortid.generate()
@@ -16,10 +16,8 @@ export async function generateShortUrl(req, res){
         visiHistory: []
     });
 
-    return res.status(201).json({
-        data: createUrl,
-        message: 'Created Ok',
-        err: {}
+    return res.render('home', {
+        id: createUrl.shortId
     })
     } catch (error) {
         return res.status(500).json({

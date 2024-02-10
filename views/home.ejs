@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    ::selection {
+        background-color: #5ce6d4;
+        color: #144e58;
+    }
+
+    html, body {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: #0f172a;
+        color: #ffffff;
+    }
+
+    #head-section {
+        width: 100%;
+        height: 7vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Protest Revolution', sans-serif;
+        border: 1px solid white;
+    }
+
+    #generate-showurl {
+        width: 100%;
+        height: 12vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgb(255, 2, 2);
+    }
+
+    #generateurl {
+        width: 45%;
+        border: 1px solid white;
+    }
+
+    #show-url {
+        width: 45%;
+        border: 1px solid yellow;
+    }
+
+    #list-urls-container {
+        width: 100%;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #list-urls {
+        width: 90%;
+        height: 80vh;
+        /* border: 1px solid yellow; */
+        overflow-y: auto;
+    }
+
+    th {
+        width: 1%;
+        height: 10vh;
+        border: 1px solid red;
+    }
+
+    td {
+        width: 1%;
+        height: 5vh;
+        border: 1px solid red;
+    }
+
+</style>
+<body>
+    <div id="head-section">
+        <h1>Url-Shortner</h1>
+    </div>
+    <div id="generate-showurl">
+        <div id="generateurl">
+            <form method="POST" action="/url">
+                <label for="">Enter your original url</label>
+                <input type="text" name="url" placeholder="https://example.com">
+                <button type="submit">Generate</button>
+            </form>
+        </div>
+        <div id="show-url">
+            <% if(locals.id) { %>
+                <p>URL Generated: http://localhost:3001/url/<%= id %></p>
+            <% } %>
+        </div>
+    </div>
+    <div id="list-urls-container">
+        <div id="list-urls">
+            <% if(locals.urls) { %>
+                <table>
+                    <thead>
+                        <th>S. no</th>
+                        <th>ShortId</th>
+                        <th>Redirect</th>
+                        <th>Clicks</th>
+                    </thead>
+                    <tbody>
+                        <% urls.forEach((url, index) => { %>
+                            <tr>
+                                <td><%= index + 1 %></td>
+                                <td><%= url.shortId %></td>
+                                <td><%= url.redirectUrl %></td>
+                                <td><%= url.visiHistory.length %></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
