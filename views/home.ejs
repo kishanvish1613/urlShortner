@@ -16,113 +16,225 @@
     }
 
     ::selection {
-        background-color: #5ce6d4;
-        color: #144e58;
+        background-color: #4db6c1;
+        color: #fff;
     }
 
     html, body {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        background-color: #0f172a;
-        color: #ffffff;
+        background-color: #e0e0e0;
+    }
+
+    input:focus {
+        outline: none;
+        border: none;
     }
 
     #head-section {
         width: 100%;
-        height: 7vh;
+        height: 10vh;
         display: flex;
         justify-content: center;
         align-items: center;
         font-family: 'Protest Revolution', sans-serif;
-        border: 1px solid white;
+        color: #144e58;
     }
 
-    #generate-showurl {
-        width: 100%;
-        height: 12vh;
+    #head-text {
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 1px solid rgb(255, 2, 2);
+        width: 20%;
+        height: 6vh;
+        border-radius: 7px;
+        box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
+    }
+
+    .hero-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     #generateurl {
-        width: 45%;
-        border: 1px solid white;
-    }
-
-    #show-url {
-        width: 45%;
-        border: 1px solid yellow;
-    }
-
-    #list-urls-container {
-        width: 100%;
-        height: 80vh;
+        width: 50%;
+        height: 90vh;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    #list-urls {
-        width: 90%;
-        height: 80vh;
-        /* border: 1px solid yellow; */
-        overflow-y: auto;
+    #url-generate-card {
+        width: 70%;
+        height: max-content;
+        border-radius: 20px;
+        padding: 40px;
+        background: #e0e0e0;
+        box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
+        /* box-shadow: inset -5px -5px 9px rgba(255,255,255,0.45), inset 5px 5px 9px rgba(94,104,121,0.3); */
     }
 
-    th {
-        width: 1%;
-        height: 10vh;
-        border: 1px solid red;
+    .gene-url-input-box form{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-direction: column;
     }
 
-    td {
-        width: 1%;
+    .gene-url-input-box form #text-gene {
+        font-size: 2rem;
+        color: #144e58;
+    }
+
+    .gene-url-input-box form input {
+        width: 80%;
         height: 5vh;
-        border: 1px solid red;
+        border-radius: 7px;
+        background-color: #e0e0e0;
+        padding-left: 20px;
+        box-shadow: inset -5px -5px 9px rgba(255,255,255,0.45), inset 5px 5px 9px rgba(94,104,121,0.3);
+        border: none;
+    }
+
+    .gene-url-input-box form #btn-gene {
+        width: 30%;
+        height: 5vh;
+        border-radius: 7px;
+        background-color: #e0e0e0;
+        box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
+        border: none;
+        cursor: pointer;
+    }
+
+    #show-url {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #show-url-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: max-content;
+        height: max-content;
+        padding: 13px;
+        border-radius: 7px;
+        margin-top: 20px;
+        box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
+    }
+
+    #list-urls {
+        width: 50%;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #list-box-main {
+        width: 85%;
+        border-radius: 20px;
+        box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
+    }
+
+    #list-box-main #table-thead-sec {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 5vh;
+        border-radius: 20px 20px 0px 0px;
+        overflow: hidden;
+        box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
+    }
+
+    #table-body-box {
+        width: 100%;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        overflow-y: auto;
+        white-space: nowrap;
+        display: inline-block;
+        padding: 10px;
+    }
+
+    #table-body-box::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    #table-body-box::-webkit-scrollbar-thumb{
+        width: 2px;
+        border-radius: 5px;
+        background-color: #144e58;
+    }
+
+    #inside-table-every-box {
+        width: 100%;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        box-shadow: inset -5px -5px 9px rgba(255,255,255,0.45), inset 5px 5px 9px rgba(94,104,121,0.3);
+        /* border: 1px solid red; */
     }
 
 </style>
 <body>
     <div id="head-section">
-        <h1>Url-Shortner</h1>
+        <div id="head-text">
+            <h1>Url-Shortner</h1>
+        </div>
     </div>
-    <div id="generate-showurl">
+    <div class="hero-container">
         <div id="generateurl">
-            <form method="POST" action="/url">
-                <label for="">Enter your original url</label>
-                <input type="text" name="url" placeholder="https://example.com">
-                <button type="submit">Generate</button>
-            </form>
+            <div id="url-generate-card">
+                <div class="gene-url-input-box">
+                    <form method="POST" action="/url">
+                        <label id="text-gene">Enter your original url</label>
+                        <input type="text" name="url" placeholder="https://example.com">
+                        <button type="submit" id="btn-gene">Generate</button>
+                    </form>
+                </div>
+                <div id="show-url">
+                    <div id="show-url-box">
+                        <% if(locals.id) { %>
+                            <p>URL Generated: http://localhost:3001/url/<%= id %></p>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="show-url">
-            <% if(locals.id) { %>
-                <p>URL Generated: http://localhost:3001/url/<%= id %></p>
-            <% } %>
-        </div>
-    </div>
-    <div id="list-urls-container">
+
         <div id="list-urls">
-            <% if(locals.urls) { %>
-                <table>
-                    <thead>
-                        <th>S. no</th>
-                        <th>ShortId</th>
-                        <th>Redirect</th>
-                        <th>Clicks</th>
-                    </thead>
-                    <tbody>
-                        <% urls.forEach((url, index) => { %>
-                            <tr>
-                                <td><%= index + 1 %></td>
-                                <td><%= url.shortId %></td>
-                                <td><%= url.redirectUrl %></td>
-                                <td><%= url.visiHistory.length %></td>
-                            </tr>
-                        <% }) %>
-                    </tbody>
-                </table>
-            <% } %>
+            <div id="list-box-main">
+                <% if(locals.urls) { %>
+                    <table>
+                        <div id="table-thead-sec">
+                                <p>S. no</p>
+                                <p>ShortId</p>
+                                <p>Redirect</p>
+                                <p>Clicks</p>
+                        </div>
+                        <div id="table-body-box">
+                            <% urls.forEach((url, index) => { %>
+                                    <div id="inside-table-every-box">
+                                        <div><%= index + 1 %></div>
+                                        <div><%= url.shortId %></div>
+                                        <div><%= url.redirectUrl %></div>
+                                        <div><%= url.visiHistory.length %></div>
+                                    </div>
+                            <% }) %>
+                        </div>
+                    </table>
+                <% } %>
+            </div>
         </div>
     </div>
 </body>
